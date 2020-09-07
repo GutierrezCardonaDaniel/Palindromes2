@@ -17,7 +17,7 @@ public class AppTest
         softly.assertThat(Parenthesis.finalLogic("(Demo)"))
                 .as("Parenthesis Palindrome" )
                 .isEqualTo("omed");
-        softly.assertThat(Parenthesis.finalLogic("oo(bar)baz"))
+        softly.assertThat(Parenthesis.finalLogic("foo(bar)baz"))
                 .as("Parenthesis Palindrome" )
                 .isEqualTo("foorabbaz");
         softly.assertAll();

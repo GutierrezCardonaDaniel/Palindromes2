@@ -75,7 +75,7 @@ public class Parenthesis {
             while (Integer.parseInt(result[1])!=0) {
                 result=Parenthesis.invertParenthesis(result[0]);
             }
-            return result[0];
+            return result[0].toLowerCase();
         }else {
             return null;
         }
