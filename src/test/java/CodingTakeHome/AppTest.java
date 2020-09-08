@@ -62,4 +62,12 @@ public class AppTest
                 .isEqualTo("joltezfoozabmazrabblim");
         softly.assertAll();
     }
+    @Test
+    public void VerifyWithEmptyParenthesis()
+    {
+        softly.assertThat(Parenthesis.finalLogic("(((((bar))((baz)()))blim)(jol()))"))
+                .as("Parenthesis Palindrome" )
+                .isEqualTo("jolzabrabblim");
+        softly.assertAll();
+    }
 }

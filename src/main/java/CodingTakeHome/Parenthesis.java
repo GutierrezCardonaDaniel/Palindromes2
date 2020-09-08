@@ -29,21 +29,19 @@ public class Parenthesis {
                     maxPriority = currentPriority;
                 }
             }
-            List<Integer> selectedIndexes = new ArrayList<Integer>();
+
+            int cont=0;
+            List<String> chunksToRevert = new ArrayList<String>();
             for (int index = 0; index < myListIndex.size(); index++) {
                 if (myListPriority.get(index) == maxPriority) {
-                    selectedIndexes.add(myListIndex.get(index));
                     wordBuilder.setCharAt(myListIndex.get(index), '%');
-                }
-            }
-            List<String> chunksToRevert = new ArrayList<String>();
-            for (int index = 0; index < selectedIndexes.size(); index++) {
-                if (index % 2 == 0) {
-                    chunksToRevert.add(wordBuilder.toString().substring(selectedIndexes.get(index) + 1, selectedIndexes.get(index + 1)));
+                    if (cont % 2 == 0) {
+                        chunksToRevert.add(wordBuilder.toString().substring(myListIndex.get(index) + 1, myListIndex.get(index+1)));
+                    }
+                    cont++;
                 }
             }
 
-            String test = wordBuilder.toString();
             String[] wordChunks = wordBuilder.toString().split("%");
 
             for (int index = 0; index < wordChunks.length; index++) {
